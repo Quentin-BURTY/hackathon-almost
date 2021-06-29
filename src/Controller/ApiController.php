@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApiController extends AbstractController
 {
     #[Route('/user', name: 'user')]
+
     public function index(UserRepository $userRepository): Response
     {
         return $this->json($userRepository->findAll());
