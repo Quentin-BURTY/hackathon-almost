@@ -14,7 +14,7 @@ import CardHeader from "../../components/Card/CardHeader.js";
 import CardAvatar from "../../components/Card/CardAvatar.js";
 import CardBody from "../../components/Card/CardBody.js";
 import CardFooter from "../../components/Card/CardFooter.js";
-import Users from "./components/Users"
+// import Users from "./components/Users"
 
 import avatar from "../../assets/img/faces/marc.jpg";
 
@@ -45,7 +45,7 @@ const useStyles = makeStyles(styles);
 export default function UserProfile() {
   const classes = useStyles();
   const [productDetails, setProductDetails] = useState('');
-  const searchUserJob = https://localhost8000/api/user/
+  const searchUserJob = "https://localhost8000/api/user/";
   const fetchDataProduct= () => {
     axios
       .get(searchUserJob)
