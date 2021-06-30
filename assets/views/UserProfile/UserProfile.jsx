@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
@@ -38,22 +38,25 @@ const styles = {
   },
 };
 
-
-
 const useStyles = makeStyles(styles);
 
 export default function UserProfile() {
   const classes = useStyles();
   const [productDetails, setProductDetails] = useState('');
-  const searchUserJob = "https://localhost8000/api/user/";
+
+  useEffect(() => {
+    fetchDataProduct();
+  }, []);
+
   const fetchDataProduct= () => {
     axios
-      .get(searchUserJob)
+      .get('/api/user/')
       .then((res) => res.data)
       .then((data) => {
         setProductDetails(data);
       });
   };
+
   return (
     <div>
       <GridContainer>
